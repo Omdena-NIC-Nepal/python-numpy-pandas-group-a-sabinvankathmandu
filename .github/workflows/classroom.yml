@@ -25,14 +25,14 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install pandas numpy 
+          pip install pandas numpy
           pip install nbconvert nbformat pytest
 
       - name: Convert Notebook to Python
         run: jupyter nbconvert --to script assignment.ipynb
 
       - name: Run Tests
-        run: pytest test_assignment.py
+        run: pytest assignment_test.py
 
       - name: Report Status
         if: ${{ failure() }}
